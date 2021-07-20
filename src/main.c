@@ -16,6 +16,7 @@ int main(int argc, char* argv[]) {
         return EXIT_SUCCESS;
     }
     else if (argc >= 2) {
+        // TODO: always decodes -> fix
         if (*argv[1] == *"-d" || *argv[1] == *"--decode") {
             result = decode(argv[2]);
         }
