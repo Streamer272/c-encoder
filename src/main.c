@@ -1,15 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 
 #include "encode.h"
 #include "decode.h"
 #include "result.h"
 
 int main(int argc, char* argv[]) {
-    const Result* result = encode("test");
+    Result result;
 
-    if (result->exitCode == EXIT_SUCCESS) {
-        printf("%s\n", result->string);
+    if (argc == 0) {
+        return EXIT_SUCCESS;
+    }
+    else if (argc >= 2) {
+        if (*argv[1] == *"-d" || *argv[1] == *"--decode") {
+            result = decode(argv[2]);
+        }
+        else if (*argv[1] == *"-e" || *argv[1] == *"--encode") {
+            result = encode(argv[2]);
+        }
+        else {
+            printf("Didn't provide correct arguments.");
+            return EXIT_FAILURE;
+        }
+    }
+
+    if (result.exitCode == EXIT_FAILURE) {
+        return EXIT_FAILURE;
+    }
+    else {
+        printf("%s\n", result.string);
     }
 
     return EXIT_SUCCESS;

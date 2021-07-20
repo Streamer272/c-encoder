@@ -1,5 +1,11 @@
 #include "encode.h"
+#include "result.h"
 
-const void* encode(const char* string) {
-    return string;
+Result encode(const char* string) {
+    Result result;
+
+    result.exitCode = 0;
+    result.string = string;
+
+    return result;
 }

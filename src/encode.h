@@ -1,3 +1,5 @@
 #pragma once
 
-const void* encode(const char* string);
+#include "result.h"
+
+Result encode(const char* string);

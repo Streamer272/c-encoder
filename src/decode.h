@@ -1,3 +1,5 @@
 #pragma once
 
-const void* decode(const char* string);
+#include "result.h"
+
+Result decode(const char* string);

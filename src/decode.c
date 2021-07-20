@@ -1,5 +1,11 @@
 #include "decode.h"
+#include "result.h"
 
-const void* decode(const char* string) {
-    return string;
+Result decode(const char* string) {
+    Result result;
+
+    result.exitCode = 0;
+    result.string = string;
+
+    return result;
 }
