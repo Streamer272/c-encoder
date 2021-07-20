@@ -2,7 +2,6 @@
 
 struct Result_s {
     int exitCode;
-    // TODO: only puts one char
-    char string;
+    char* string;
 };
 typedef struct Result_s Result;
