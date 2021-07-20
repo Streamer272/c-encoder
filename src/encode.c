@@ -1,6 +1,3 @@
-#include <stdlib.h>
-#include <string.h>
-
 #include "encode.h"
 
 Result encode(const char* string) {
