@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <string.h>
 
 #include "encode.h"
 #include "decode.h"
@@ -16,11 +17,11 @@ int main(int argc, char* argv[]) {
         return EXIT_SUCCESS;
     }
     else if (argc >= 2) {
-        if (*argv[1] == *"-d" || *argv[1] == *"--decode") {
+        if (strcmp(argv[1], "-d") == 0 || strcmp(argv[1], "--decode") == 0) {
             printf("de\n");
             result = decode(argv[2]);
         }
-        else if (*argv[1] == *"-e" || *argv[1] == *"--encode") {
+        else if (strcmp(argv[1], "-e") == 0 || strcmp(argv[1], "--encode") == 0) {
             printf("en\n");
             result = encode(argv[2]);
         }
