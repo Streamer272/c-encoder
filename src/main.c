@@ -13,7 +13,14 @@
 int main(int argc, char* argv[]) {
     Result result;
 
-    if (argc == 0) {
+    if (argc < 1) {
+        return EXIT_SUCCESS;
+    }
+    else if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0) {
+        printf("This is automatic response provided by help command.\n");
+        printf("Program arguments:\n");
+        printf("\t<encoder action (-e | -d)> - action you want the encoder to do (-e for encode, -d for decode).\n");
+
         return EXIT_SUCCESS;
     }
     else if (argc >= 2) {
@@ -24,7 +31,7 @@ int main(int argc, char* argv[]) {
             result = encode(argv[2]);
         }
         else {
-            printf("Didn't provide correct arguments.");
+            printf("Incorrect arguments. Run `encoder --help` to show help.\n");
             return EXIT_FAILURE;
         }
     }
@@ -33,7 +40,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
     else {
-        printf("%s\n", result.string);
+        printf("Encoder result: %s\n", result.string);
     }
 
     return EXIT_SUCCESS;
