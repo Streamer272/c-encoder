@@ -18,11 +18,9 @@ int main(int argc, char* argv[]) {
     }
     else if (argc >= 2) {
         if (strcmp(argv[1], "-d") == 0 || strcmp(argv[1], "--decode") == 0) {
-            printf("de\n");
-//            result = decode(argv[2]);
+            result = decode(argv[2]);
         }
         else if (strcmp(argv[1], "-e") == 0 || strcmp(argv[1], "--encode") == 0) {
-            printf("en\n");
             result = encode(argv[2]);
         }
         else {
@@ -35,8 +33,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
     else {
-        char* ptr = result.string;
-        printf("%s\n", ptr);
+        printf("%s\n", result.string);
     }
 
     return EXIT_SUCCESS;
