@@ -6,6 +6,9 @@
 #include "decode.h"
 #include "result.h"
 
+// https://stackoverflow.com/questions/42239280/extract-bits-of-character-in-c-using-limited-bitwise-operators
+// https://stackoverflow.com/questions/10825218/convert-from-a-binary-to-char-in-c
+
 int main(int argc, char* argv[]) {
     Result result;
 
