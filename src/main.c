@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
         printf("This is automatic response provided by help command.\n");
         printf("Program arguments:\n");
         printf("\t<encoder action (-e | -d)> - action you want the encoder to do (-e for encode, -d for decode).\n");
+        printf("\t<encoder string> - string you want to decode/encode\n");
 
         return EXIT_SUCCESS;
     }
@@ -36,11 +37,11 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    if (result.exitCode == EXIT_FAILURE) {
+    if (result.exitCode == EXIT_FAILURE || result.string == (void*)0) {
         return EXIT_FAILURE;
     }
     else {
-        printf("Encoder result: %s\n", result.string);
+        printf("Encoder result: \"%s\"\n", result.string);
     }
 
     return EXIT_SUCCESS;
