@@ -5,4 +5,4 @@
 
 #include "result.h"
 
-Result encode(const char* string);
+Result encode(const char* string, unsigned short int range);
