@@ -4,7 +4,6 @@
 
 #include "encode.h"
 #include "decode.h"
-#include "result.h"
 
 // https://stackoverflow.com/questions/42239280/extract-bits-of-character-in-c-using-limited-bitwise-operators
 // https://stackoverflow.com/questions/10825218/convert-from-a-binary-to-char-in-c
@@ -28,7 +27,7 @@ int main(int argc, char* argv[]) {
             result = decode(argv[2]);
         }
         else if (strcmp(argv[1], "-e") == 0 || strcmp(argv[1], "--encode") == 0) {
-            result = encode(argv[2]);
+            result = encode(argv[2], 1);
         }
         else {
             printf("Incorrect arguments. Run `encoder --help` to show help.\n");
