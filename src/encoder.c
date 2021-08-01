@@ -1,6 +1,6 @@
-#include "encode.h"
+#include "encoder.h"
 
-Result encode(const char* string, unsigned short int range) {
+Result encode(const char* string, unsigned short int range, unsigned short int encode) {
     Result result;
     result.exitCode = 0;
 
@@ -8,7 +8,14 @@ Result encode(const char* string, unsigned short int range) {
     int index = 0;
     while (strcmp(&string[index], "\0") != 0) {
         const int ascii = (int) string[index];
-        char newChar = (char) (ascii << range);
+
+        char newChar;
+        if (encode) {
+            newChar = (char) (ascii + range);
+        }
+        else {
+            newChar = (char) (ascii - range);
+        }
 
         encodedString[index++] = newChar;
     }

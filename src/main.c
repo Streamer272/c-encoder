@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "encode.h"
-#include "decode.h"
+#include "encoder.h"
 
 // https://stackoverflow.com/questions/42239280/extract-bits-of-character-in-c-using-limited-bitwise-operators
 // https://stackoverflow.com/questions/10825218/convert-from-a-binary-to-char-in-c
@@ -24,10 +23,10 @@ int main(int argc, char* argv[]) {
     }
     else if (argc >= 2) {
         if (strcmp(argv[1], "-d") == 0 || strcmp(argv[1], "--decode") == 0) {
-            result = decode(argv[2], 1);
+            result = encode(argv[2], 1, 0);
         }
         else if (strcmp(argv[1], "-e") == 0 || strcmp(argv[1], "--encode") == 0) {
-            result = encode(argv[2], 1);
+            result = encode(argv[2], 1, 1);
         }
         else {
             printf("Incorrect arguments. Run `encoder --help` to show help.\n");
