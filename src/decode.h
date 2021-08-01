@@ -5,4 +5,4 @@
 
 #include "result.h"
 
-Result decode(const char* string);
+Result decode(const char* string, unsigned short int range);

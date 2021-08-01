@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
     }
     else if (argc >= 2) {
         if (strcmp(argv[1], "-d") == 0 || strcmp(argv[1], "--decode") == 0) {
-            result = decode(argv[2]);
+            result = decode(argv[2], 1);
         }
         else if (strcmp(argv[1], "-e") == 0 || strcmp(argv[1], "--encode") == 0) {
             result = encode(argv[2], 1);
