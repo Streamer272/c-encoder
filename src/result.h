@@ -1,7 +1,6 @@
 #pragma once
 
-struct Result_s {
+typedef struct {
     int exitCode;
     char* string;
-};
-typedef struct Result_s Result;
+} Result;
